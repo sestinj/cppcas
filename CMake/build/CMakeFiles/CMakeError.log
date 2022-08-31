@@ -1,0 +1,112 @@
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e9f56/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e9f56.dir/build.make CMakeFiles/cmTC_e9f56.dir/build
+Building C object CMakeFiles/cmTC_e9f56.dir/CheckSymbolExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -MD -MT CMakeFiles/cmTC_e9f56.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_e9f56.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_e9f56.dir/CheckSymbolExists.c.o -c /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h' file not found
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_e9f56.dir/CheckSymbolExists.c.o] Error 1
+make: *** [cmTC_e9f56/fast] Error 2
+
+
+File /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4128d/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_4128d.dir/build.make CMakeFiles/cmTC_4128d.dir/build
+Building C object CMakeFiles/cmTC_4128d.dir/CheckSymbolExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -MD -MT CMakeFiles/cmTC_4128d.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_4128d.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_4128d.dir/CheckSymbolExists.c.o -c /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h' file not found
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_4128d.dir/CheckSymbolExists.c.o] Error 1
+make: *** [cmTC_4128d/fast] Error 2
+
+
+File /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ffc6a/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_ffc6a.dir/build.make CMakeFiles/cmTC_ffc6a.dir/build
+Building C object CMakeFiles/cmTC_ffc6a.dir/CheckSymbolExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -MD -MT CMakeFiles/cmTC_ffc6a.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_ffc6a.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_ffc6a.dir/CheckSymbolExists.c.o -c /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h' file not found
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_ffc6a.dir/CheckSymbolExists.c.o] Error 1
+make: *** [cmTC_ffc6a/fast] Error 2
+
+
+File /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1e1f6/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1e1f6.dir/build.make CMakeFiles/cmTC_1e1f6.dir/build
+Building C object CMakeFiles/cmTC_1e1f6.dir/CheckSymbolExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -MD -MT CMakeFiles/cmTC_1e1f6.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_1e1f6.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_1e1f6.dir/CheckSymbolExists.c.o -c /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h' file not found
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_1e1f6.dir/CheckSymbolExists.c.o] Error 1
+make: *** [cmTC_1e1f6/fast] Error 2
+
+
+File /Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenCL.framework/OpenCL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

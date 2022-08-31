@@ -1,59 +1,116 @@
 #include <iostream>
-
-class Operator {
-    private:
-        int id;
-    public:
-        double raw_comp(double args[10]){ // TODO: What's it called? Vector?
-            return 0;
-        }
-};
-
-class Addition: Operator {
-    public:
-        double raw_comp(double args[10]) override {
-            return 5;
-        }
-};
-class Expr {
-    private:
-
-
-    public:
-
-};
+#include <vector>
 
 struct LazyVal {
     double val;
     bool lazy;
+    bool has_val;
+    LazyVal(double v, bool l, bool h) : val(v), lazy(l), has_val(h) {}
 };
 
-struct Expression {
-    int id;
-    LazyVal val;
-    Operator *op;
-    Expression args[10]; // TODO: again, vector...play around to find out what issues this might cause like in Rust.
+int NEXT_EXPRESSION_ID = 0;
+int getNextExpressionId() {
+    return NEXT_EXPRESSION_ID++;
+}
+
+class Expression {
+    public:
+        int id;
+        LazyVal val;
+        std::vector<Expr> args;
+
+        Expression(): val(0, false, false), args(), id(getNextExpressionId()) {};
+
+        virtual double raw_comp(std::vector<double> args) {
+            throw std::logic_error("raw_compute not implemented");
+        };
+        // TODO: Pass in the map of arguments       
+        double full_eval() {
+            if (val.has_val) {
+                return val.val;
+            }
+            std::vector<double> args_vals;
+            for (Expr e : args) {
+                args_vals.push_back(e->full_eval());
+            }
+            std::cout << raw_comp(args_vals) << std::endl;
+            return this->raw_comp(args_vals);
+        }
+};
+
+typedef Expression* Expr;
+
+class sum: public Expression {
+    public:
+        double raw_comp(std::vector<double> args) override {
+            return args[0] + args[1];
+        }
+        sum(Expr a, Expr b) {
+            args.push_back(a);
+            args.push_back(b);
+        };
+};
+
+class sub: public Expression {
+    public:
+        double raw_comp(std::vector<double> args) override {
+            return args[0] - args[1];
+        }
+        sub(Expr a, Expr b) {
+            args.push_back(a);
+            args.push_back(b);
+        };
+};
+
+class mul: public Expression {
+    public:
+        double raw_comp(std::vector<double> args) override {
+            return  args[0] * args[1];
+        }
+        mul(Expr a, Expr b) {
+            args.push_back(a);
+            args.push_back(b);
+        };
+};
+
+class divide: public Expression {
+    public:
+        double raw_comp(std::vector<double> args) override {
+            return args[0] / args[1];
+        }
+        divide(Expr a, Expr b) {
+            args.push_back(a);
+            args.push_back(b);
+        };
+};
+
+Expr operator+( const Expr& a, const Expr& b) {
+    return new sum(a, b);
+}
+Expr operator-( const Expr& a, const Expr& b) {
+    return new sub(a, b);
+}
+Expr operator*( const Expr& a, const Expr& b) {
+    return new mul(a, b);
+}
+Expr operator/( const Expr& a, const Expr& b) {
+    return new divide(a, b);
+}
+
+class Value: public Expression {
+    public:
+        Value(double v) {
+            val = LazyVal(v, false, true);
+        }
+        double raw_comp(std::vector<double> args) {
+            return val.val;
+        }
 };
 
 int main() {
   std::cout << "Hello World!\n";
+  Expression* c = new Value(3);
+  Expr d = new Value(4);
+  Expr a = c + d;
+  std::cout << a->full_eval() << c->full_eval() << d->full_eval() << std::endl;
 };
-
-
-/*
-Options:
-- Expression is a class, which all operators are subclasses of. The functions for computing are all class methods
-- Expression is a class with a pointer to the proper Operator class. Compute functions are done by calling the operator specific class method from the pointer. THis seems like unecessary indirection though...
-- Expression is a struct (what are the benefits here? I believe size is the exact same as class. It's possible that there are different rules for passing around classes vs. structs), and an operation is a class. Expr has the pointer to the operation class, of which there should only be a single instance...but if that's true, why does it have to be a subclass and why can't it just be an object instantiated with all the info needed? I think the answer is for intuitive development of new operators. But this might trade off with being able to dynamically create new operators. So I assume you could always do the latter if you have the former, just allow both options.
-- Just a single struct and all of the functions are shared, except might have to lookup operator specific information in some top-leve hash table...don't like this, it's what you started to do with the Rust environment concept, and it leads to a very non-portable and...lost train of thought...
-
-I say go with plan #3 probably, at least until you better understand what the differences between structs and classes are.
-*/
-
-/*
-Questions:
-- What does it look like to create a new object? Can I just use the function notation I want without a new keyword or anything?
-- Macros?
-- Are there traits? How does one make something printable, etc....?
-
-*/

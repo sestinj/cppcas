@@ -1,0 +1,7 @@
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/edit_cache.dir
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/CMakeFiles/rebuild_cache.dir
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/src/CMakeFiles/FOO_CORE.dir
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/src/CMakeFiles/foo-cpu.dir
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/src/CMakeFiles/foo-opencl.dir
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/src/CMakeFiles/edit_cache.dir
+/Users/natesesti/Documents/Languages/rust/cppcas/CMake/build/src/CMakeFiles/rebuild_cache.dir
