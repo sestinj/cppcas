@@ -3,22 +3,6 @@
 #include <vector>
 using namespace std;
 
-vector<int> slow_double(vector<int> a) {
-    vector<int> b(a.size());
-    for (int i = 0; i < a.size(); i++) {
-        b[i] = a[i] * 2;
-    }
-    return b;
-}
-
-vector<int> fast_double(vector<int> a) {
-    vector<int> b(a.size());
-    af::array a_af = af::array(a.size(), a.data());
-    af::array b_af = a_af * 2;
-    b_af.host(b.data());
-    return b;
-}
-
 double fast_sum() {
     // Generate 10,000 random values
     af::array a = af::randu(10000);
@@ -42,8 +26,8 @@ double slow_sum() {
     }
     return sum;
 }
+
 int main() {
-  
   af::timer::start();
   double a = fast_sum();
   printf("Slow double: %f\n", af::timer::stop());
