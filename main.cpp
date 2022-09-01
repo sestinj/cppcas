@@ -1,3 +1,4 @@
+#include <arrayfire.h>
 #include <vector>
 #include <iostream>
 #include <math.h>
@@ -10,7 +11,7 @@ using namespace std;
                 args.push_back(a); \
                 args.push_back(b); \
             }; \
-            double raw_comp(std::vector<double> args) override { \
+            af::array raw_comp(std::vector<af::array> args) override { \
                 return args[0] op args[1]; \
             }; \
     }; \
@@ -27,7 +28,7 @@ using namespace std;
             name(ExP a) { \
                 args.push_back(a); \
             }; \
-            double raw_comp(std::vector<double> args) override { \
+            af::array raw_comp(std::vector<af::array> args) override { \
                 return func(args[0]); \
             }; \
     }; \
@@ -38,7 +39,7 @@ using namespace std;
 class Expr {
     public:
         vector<Expr*> args;
-        virtual double raw_comp(vector<double> args) = 0;
+        virtual af::array raw_comp(vector<af::array> args) = 0;
 };
 typedef Expr* ExP;
 
@@ -73,21 +74,21 @@ DEF_UN_OP(Lgamma, lgamma, lgamma);
 
 class Value: public Expr {
     public:
-        double val;
-        Value(double v) {
+        af::array val;
+        Value(af::array v) {
             val = v;
         };
-        double raw_comp(vector<double> args) override {
+        af::array raw_comp(vector<af::array> args) override {
             return val;
         }
 };
 
-Value* value(double v) {
+Value* value(af::array v) {
     return new Value(v);
 }
 
-double full_eval(ExP e) {
-    vector<double> args_vals;
+af::array full_eval(ExP e) {
+    vector<af::array> args_vals;
     for (Expr* e : e->args) {
         args_vals.push_back(full_eval(e));
     };
@@ -97,8 +98,15 @@ double full_eval(ExP e) {
 int main() {
     cout << "Testing..." << endl;
 
-    ExP v = value(3.14);
+    ExP v = value(af::constant(3.14));
+
+    ExP a = value(af::constant(1));
+    ExP b = add(a, v);
+    cout << full_eval(b) << endl;
 
     cout << "Done." << endl;
     return 0;
 };
+
+
+// Think early about making it fast! You want everything to be a tensor
