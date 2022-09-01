@@ -128,6 +128,36 @@ void print_val(af::array v) {
     }
 };
 
+class Placeholder: public Expr {
+    public:
+        int placeholder_id;
+        static int next_placeholder_id;
+        Placeholder() {
+            placeholder_id = next_placeholder_id++;
+        };
+        af::array raw_comp(vector<af::array> args) override {
+            throw std::domain_error("Placeholder cannot be computed.");
+        }
+};
+
+Placeholder* placeholder() {
+    return new Placeholder();
+}
+
+class Variable: public Expr {
+    public:
+        int var_id;
+        static int next_var_id;
+        string symbol;
+        Variable(string _symbol) {
+            var_id = next_var_id++;
+            symbol = _symbol;
+        };
+        af::array raw_comp(vector<af::array> args) override {
+            throw std::domain_error("Variable cannot be computed.");
+        };
+};
+
 int main() {
     cout << "Testing..." << endl;
 
